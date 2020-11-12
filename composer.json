@@ -21,7 +21,7 @@
         "simplesoftwareio/simple-qrcode": ">=3.0.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^4.0",
+        "orchestra/testbench": "^5.0",
         "phpunit/phpunit": "^8.0"
     },
     "autoload": {
@@ -55,4 +55,3 @@
     "minimum-stability": "dev",
     "prefer-stable": true
 }
-

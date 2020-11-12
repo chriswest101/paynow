@@ -3,7 +3,7 @@
 namespace Chriswest101\Paynow;
 
 use DateTime;
-use File;
+use Illuminate\Support\Facades\File;
 use InvalidArgumentException;
 use Chriswest101\Paynow\Helpers\CRC16;
 use Chriswest101\Paynow\Helpers\QRCodeService;
