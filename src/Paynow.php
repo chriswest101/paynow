@@ -10,7 +10,7 @@ use Chriswest101\Paynow\Helpers\QRCodeService;
 
 class Paynow
 {
-    	const PAY_VIA_UEN = '2';
+	const PAY_VIA_UEN = '2';
 	const PAY_VIA_MOBILE = '0';
 
 	/**
