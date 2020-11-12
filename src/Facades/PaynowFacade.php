@@ -1,6 +1,6 @@
 <?php
 
-namespace Chriswest101\Paynow;
+namespace Chriswest101\Paynow\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -16,6 +16,6 @@ class PaynowFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'paynow';
+        return \Chriswest101\Paynow\PayNow::class;
     }
 }
