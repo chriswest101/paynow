@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Chriswest101\Paynow\Skeleton\SkeletonClass
  */
-class PaynowFacade extends Facade
+class Paynow extends Facade
 {
     /**
      * Get the registered name of the component.
