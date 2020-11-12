@@ -69,6 +69,11 @@ class Paynow
 	protected bool $createAsBase64Image;
 
 	/**
+	 * @var $imageSize
+	 */
+	protected int $imageSize;
+
+	/**
 	 * Generate a PayNow QR Code
 	 * 
 	 * @param float $amount - Amount of transaction
@@ -81,6 +86,7 @@ class Paynow
 	 * @param null|string $uen - Company UEN to pay (Mandatory unless mobile is provided)
 	 * @param null|string $mobile - Mobile number to pay (Mandatory unless UEN is provided)
 	 * @param bool $createAsBase64Image - Return QR Code as Base64 image
+	 * @param int $imageSize - Size of image in pixels
 	 */
 	public function generate(
 		float $amount,
@@ -92,7 +98,8 @@ class Paynow
 		string $merchantCity = "Singapore",
 		string $uen = null,
 		string $mobile = null,
-		bool $createAsBase64Image = false)
+		bool $createAsBase64Image = false,
+		int $imageSize = 300)
 	{
 		$this->uen = $uen;
 		$this->mobile = $mobile;
@@ -104,6 +111,7 @@ class Paynow
 		$this->merchantCountry = $merchantCountry;
 		$this->merchantCity = $merchantCity;
 		$this->createAsBase64Image = $createAsBase64Image;
+		$this->imageSize = $imageSize;
 
 		$this->validateParams();
 		return $this->build();
@@ -224,7 +232,7 @@ class Paynow
 	 */
 	private function createAsBase64Image(string $str): string
 	{
-		return "data:image/png;base64," . QRCodeService::generate($str, File::get('vendor/paynow/images/PayNow.png'));
+		return "data:image/png;base64," . QRCodeService::generate($str, File::get('vendor/paynow/images/PayNow.png'), $this->imageSize);
 	}
 
 	/**
