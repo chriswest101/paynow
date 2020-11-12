@@ -21,6 +21,7 @@ use Chriswest101\Paynow\Facades\Paynow;
 ```
 
 **4. Create PayNow QR Code**
+
 As encoded base64image
 ```php
 Paynow::generate(
