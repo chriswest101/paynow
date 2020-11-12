@@ -10,12 +10,18 @@ Singapore Paynow QR Code generator for PHP.
 $ composer require chriswest101/paynow
 ```
 
-**2. Add the using**
+**2. Publish the assets**
+```
+$ php artisan vendor:publish --provider="Chriswest101\Paynow\PaynowServiceProvider" --tag=public --force
+```
+
+**3. Add the using**
 ```php
 use Chriswest101\Paynow\Facades\Paynow;
 ```
 
-**3. Create PayNow QR Code as base64 encoded image**
+**4. Create PayNow QR Code**
+As encoded base64image
 ```php
 Paynow::generate(
     100.00,
@@ -30,8 +36,21 @@ Paynow::generate(
     true
 );
 ```
-
-
+As paynow string
+```php
+Paynow::generate(
+    100.00,
+    false,
+    "O123456",
+    (new DateTime())->modify("+ 1 hour"),
+    "Clothing Company Pte Ltd",
+    "SG",
+    "Singapore",
+    "2020111104G",
+    null,
+    false
+);
+```
 ## Potential usecases:
 
 Dynamically generating payment QR codes on e-commerce or donation pages that allow tracking of payments via reference codes.
