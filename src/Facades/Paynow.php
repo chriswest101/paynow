@@ -16,6 +16,6 @@ class Paynow extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Chriswest101\Paynow\PayNow::class;
+        return \Chriswest101\Paynow\Paynow::class;
     }
 }
