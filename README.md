@@ -10,32 +10,14 @@ Singapore Paynow QR Code generator for PHP.
 $ composer require chriswest101/paynow
 ```
 
-
 **2. Add the using**
 ```php
-use chriswest101\PayNow;
+use Chriswest101\Paynow\Facades\Paynow;
 ```
 
-**3. Inject the Service or create new service**
+**3. Create PayNow QR Code as base64 encoded image**
 ```php
-/**
- * @var PayNow $payNowService
- */
-protected PayNow $payNowService;
-
-public function __construct(PayNowService $payNowService)
-{
-    $this->payNowService = $payNowService;
-}
-```
-OR
-```php
-$payNowService = new PayNow();
-```
-
-**4. Create PayNow QR Code as base64 encoded image**
-```php
-$base64QrCode = $this->PayNowService->generate(
+Paynow::generate(
     100.00,
     false,
     "O123456",
