@@ -24,7 +24,7 @@ use Chriswest101\Paynow\Facades\Paynow;
 
 As encoded base64image
 
-Dynamic
+*Dynamic*
 ```php
 Paynow::generate(
     100.00,
@@ -55,7 +55,7 @@ Paynow::generateDynamic(
 );
 ```
 
-Static
+*Static*
 ```php
 Paynow::generateStatic(
     "Clothing Company Pte Ltd",
@@ -69,10 +69,6 @@ Paynow::generateStatic(
 As paynow string
 ```php
 Paynow::generate(
-    100.00,
-    false,
-    "O123456",
-    (new DateTime())->modify("+ 1 hour"),
     "Clothing Company Pte Ltd",
     "SG",
     "Singapore",
