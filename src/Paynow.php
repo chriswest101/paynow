@@ -96,8 +96,8 @@ class Paynow
 		string $company,
 		string $merchantCountry = 'SG',
 		string $merchantCity = "Singapore",
-		string $uen = null,
-		string $mobile = null,
+		?string $uen = null,
+		?string $mobile = null,
 		bool $createAsBase64Image = false,
 		int $imageSize = 300)
 	{
@@ -137,8 +137,8 @@ class Paynow
 		string $company,
 		string $merchantCountry = 'SG',
 		string $merchantCity = "Singapore",
-		string $uen = null,
-		string $mobile = null,
+		?string $uen = null,
+		?string $mobile = null,
 		bool $createAsBase64Image = false,
 		int $imageSize = 300)
 	{
