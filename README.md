@@ -23,8 +23,10 @@ use Chriswest101\Paynow\Facades\Paynow;
 **4. Create PayNow QR Code**
 
 As encoded base64image
+
+*Dynamic*
 ```php
-Paynow::generate(
+Paynow::generateDynamic(
     100.00,
     false,
     "O123456",
@@ -39,11 +41,34 @@ Paynow::generate(
 ```
 As paynow string
 ```php
-Paynow::generate(
+Paynow::generateDynamic(
     100.00,
     false,
     "O123456",
     (new DateTime())->modify("+ 1 hour"),
+    "Clothing Company Pte Ltd",
+    "SG",
+    "Singapore",
+    "2020111104G",
+    null,
+    false
+);
+```
+
+*Static*
+```php
+Paynow::generateStatic(
+    "Clothing Company Pte Ltd",
+    "SG",
+    "Singapore",
+    "2020111104G",
+    null,
+    true
+);
+```
+As paynow string
+```php
+Paynow::generateStatic(
     "Clothing Company Pte Ltd",
     "SG",
     "Singapore",
