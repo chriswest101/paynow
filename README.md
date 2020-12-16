@@ -26,7 +26,7 @@ As encoded base64image
 
 *Dynamic*
 ```php
-Paynow::generate(
+Paynow::generateDynamic(
     100.00,
     false,
     "O123456",
@@ -68,7 +68,7 @@ Paynow::generateStatic(
 ```
 As paynow string
 ```php
-Paynow::generate(
+Paynow::generateStatic(
     "Clothing Company Pte Ltd",
     "SG",
     "Singapore",
