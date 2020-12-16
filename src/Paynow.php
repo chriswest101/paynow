@@ -88,7 +88,7 @@ class Paynow
 	 * @param bool $createAsBase64Image - Return QR Code as Base64 image
 	 * @param int $imageSize - Size of image in pixels
 	 */
-	public function generate(
+	public function generateDynamic(
 		float $amount,
 		bool $editable,
 		string $uniqueOrderCode,
