@@ -58,6 +58,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/chriswest101/simple-qrcode"
-        },
-    }
+        }
+    ]
 }
