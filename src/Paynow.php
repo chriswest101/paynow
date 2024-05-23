@@ -287,13 +287,18 @@ class Paynow
 		
 		// Here we add "6304" to the previous string
 		// ID 63 (Checksum) 04 (4 characters)
+		$output .= '6304';
+		
 		// Do a CRC16 of the whole string including the "6304"
-		// then append it to the end.
-		$output .= '6304' . CRC16::calculate($output . '6304');
+		$crc16CalcOutput = $this->padLeft(CRC16::calculate($output), 4);
+		
+		// then append the computed val. to the $output var.
+		$output .= $crc16CalcOutput;
+		
 		if ($this->createAsBase64Image) {
 			$output = $this->createAsBase64Image($output);
 		}
-
+		
 		return $output;
 	}
 
@@ -340,9 +345,14 @@ class Paynow
 		
 		// Here we add "6304" to the previous string
 		// ID 63 (Checksum) 04 (4 characters)
+		$output .= '6304';
+		
 		// Do a CRC16 of the whole string including the "6304"
-		// then append it to the end.
-		$output .= '6304' . CRC16::calculate($output . '6304');
+		$crc16CalcOutput = $this->padLeft(CRC16::calculate($output), 4);
+		
+		// then append the computed val. to the $output var.
+		$output .= $crc16CalcOutput;
+		
 		if ($this->createAsBase64Image) {
 			$output = $this->createAsBase64Image($output);
 		}
